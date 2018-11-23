@@ -1,0 +1,257 @@
+@import "normalize";
+@import "roboto";
+
+//functions
+@function rem($value){
+  @return unquote(($value/1px)/16 + "rem");
+}
+
+//variables
+$borderColor:#92e8fe;
+$colorGreen: #70c446;
+$colorRed: #c80e24;
+$colorBlue: #3eb5f1;
+
+.container {
+  max-width: rem(1015px);
+  padding: 0 rem(15px);
+  margin: 0 auto; 
+  box-sizing: border-box; 
+}
+
+body {
+  font: 700 rem(14px)/rem(26px) Roboto, Arial, sans-serif;
+  color: #fff;
+}
+
+.main {
+  box-sizing: border-box;
+  height: calc(100vh - rem(140px));
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  padding: rem(70px) 0;
+    &-select {
+    &__block {
+      margin-bottom: rem(52px);
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: rem(20px) rem(25px);
+      border-radius: rem(10px);
+      border: 1px solid #203640;
+      background-color: rgba(#203640, .1);
+    }
+    &__text {
+      flex: 1;
+      text-align: center;
+      font-size: rem(32px);
+      font-weight: 500;
+    }
+    &__form {
+      margin-left: rem(25px);
+    }
+  }
+    //currency list
+  &-currency {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &__item {
+      box-sizing: border-box;
+      padding: rem(20px) rem(30px);
+      width: rem(308px);
+      // height: rem(354px);
+      border-radius: rem(10px);
+      box-sizing: border-box;
+      // overflow: hidden;
+      background-size: cover !important;
+      background-position: center !important;
+      position: relative;
+      &:not(:first-child) .main-currency__img {
+        margin-top: rem(55px);
+      }
+    }
+    &__name {
+      margin: 0;
+      text-align: center;
+      font-size: rem(22px);
+      position: relative;
+      z-index: 3;
+    }
+    &__img {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    &__price, &__percent, &__change-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__price {
+      margin-top: rem(143px);
+    }
+    &__text {
+      font-size: rem(20px);
+      line-height: rem(30px);
+    }
+    &__qnty {
+      font-size: rem(21px);
+    }
+    &__percent {
+
+    }
+    &__txt {
+      font-size: rem(14px);
+      line-height: rem(30px);
+    }
+    &__progress {
+      box-sizing: border-box;
+      position: relative;
+      padding: rem(8px) rem(21px);
+      width: rem(42px);
+      cursor: pointer;
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        box-sizing: border-box;
+        height: rem(16px);
+        transition: all ease .25s;
+      }
+      &::before {
+        width: rem(42px);
+        box-shadow: inset 1px 3px 7px rgba(27, 36, 40, 0.56);
+        border-radius: 8px;
+        background-color: $colorBlue;
+        right: 0;
+      }
+      &::after {
+        width: rem(23px);
+        height: rem(23px);
+        background-color: #fff;
+        border-radius: 50%;
+      }
+      &:checked {
+        &::after {
+          transform: translateX(-100%);
+          left: 100%;       
+        }
+        &.grey {
+          &::before {
+            box-shadow: inset 1px 3px 7px rgba(27, 36, 40, 0.56);
+            background-color: #c4c4c4;
+          }
+        }
+      }
+    }
+    &__change {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      .txt {
+        font-size: rem(14px);
+        line-height: rem(20px);
+        color: rgba(#fff, .2);
+      }
+      .percent {
+        font-size: rem(16px);
+        line-height: rem(22px);
+        color: #70c446;
+        &.red {
+          color: $colorRed;
+        }
+      }
+    }
+  }
+    
+  
+}
+
+.select, .select__list {  
+  border-radius: rem(5px);
+  border: rem(1px) solid #92e8fe;
+  box-sizing: border-box;
+}
+
+.select {
+  cursor: pointer;
+  width: rem(297px);
+  background-color: transparent;
+  padding: rem(13px) rem(15px);
+  background: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iOSIgaGVpZ2h0PSI1IiB2aWV3Qm94PSIwIDAgOSA1Ij48ZGVmcz48cGF0aCBpZD0ibXJkZmEiIGQ9Ik0xNDA0Ljk5OCAxMTcuMjVsLjMxLS4yNTQgNC40MzkgNC43NTMtLjMxLjI1NXoiLz48cGF0aCBpZD0ibXJkZmIiIGQ9Ik0xNDA5LjQ2IDEyMS45NjNsLS4yODUtLjIyNyA0LjU0NC00LjcuMjg2LjIyOHoiLz48Y2xpcFBhdGggaWQ9Im1yZGZjIj48dXNlIGZpbGw9IiNmZmYiIHhsaW5rOmhyZWY9IiNtcmRmYSIvPjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJtcmRmZCI+PHVzZSBmaWxsPSIjZmZmIiB4bGluazpocmVmPSIjbXJkZmIiLz48L2NsaXBQYXRoPjwvZGVmcz48Zz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTQwNSAtMTE3KSI+PHVzZSBmaWxsPSIjZmNmY2ZjIiB4bGluazpocmVmPSIjbXJkZmEiLz48dXNlIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMCIgc3Ryb2tlPSIjOTJlOGZlIiBzdHJva2UtbWl0ZXJsaW1pdD0iNTAiIHN0cm9rZS13aWR0aD0iMiIgY2xpcC1wYXRoPSJ1cmwoJnF1b3Q7I21yZGZjJnF1b3Q7KSIgeGxpbms6aHJlZj0iI21yZGZhIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDA1IC0xMTcpIj48dXNlIGZpbGw9IiNmY2ZjZmMiIHhsaW5rOmhyZWY9IiNtcmRmYiIvPjx1c2UgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwIiBzdHJva2U9IiM5MmU4ZmUiIHN0cm9rZS1taXRlcmxpbWl0PSI1MCIgc3Ryb2tlLXdpZHRoPSIyIiBjbGlwLXBhdGg9InVybCgmcXVvdDsjbXJkZmQmcXVvdDspIiB4bGluazpocmVmPSIjbXJkZmIiLz48L2c+PC9nPjwvc3ZnPg==');
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  position: relative;
+  &__gap, &__item {
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 300;
+    font-size: rem(16px);
+    transition: all .3s;
+    &:hover {
+      transform: scale(.9);
+    }
+  }
+  &__list {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    margin: rem(23px) 0 0 0;
+    padding: rem(9px) rem(15px);
+    list-style: none;
+    background-color: #1e252b;
+    width: 100%;
+  }
+}
+
+//media
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+  .main-select__text {
+    font-size: rem(25px);
+  }
+  .main-currency__list {
+    margin: rem(-15px);
+    justify-content: center;
+  }
+  .main-currency__item {
+    margin: rem(15px);
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .main-select__block {
+    flex-direction: column;
+  }
+  .main-select__text {
+    margin-bottom: rem(15px);
+  }
+  .main-select__form {
+    margin-left: 0;
+  }
+}
+
+//Custom, iPhone Retina 
+@media only screen and (max-width : 320px) {
+  .main {
+    padding: rem(30px) 0;
+    &-select {
+      &__block {
+        margin-bottom: rem(30px);
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="css/main.css")
+    title Test
+  body
+    main.main(style="background: url(img/main-bg.jpg);")
+      .container
+        .main-select__block
+          label.main-select__text Select currency to exhange:
+          form.main-select__form
+            select.main-select__input
+              option.main-select__option(value="eur") EUR
+              option.main-select__option(value="rub") RUB
+              option.main-select__option(value="gbp") GBP
+
+        .main-currency__list
+          .main-currency__item(style="background: url(img/currency/ethereum-bg.jpg);")
+            h4.main-currency__name Ethereum
+            .main-currency__img
+              img(src="img/currency/ethereum.png", alt="Ethereum")
+            .main-currency__price
+              span.main-currency__text Price:
+              span.main-currency__qnty $22 526.92
+            .main-currency__percent
+              span.main-currency__txt Percent change
+              input.main-currency__progress.grey(type="checkbox")
+            ul.main-currency__change
+              li.main-currency__change-item
+                span.txt Hour change
+                span.percent +266%
+              li.main-currency__change-item
+                span.txt Day change
+                span.percent +266%
+              li.main-currency__change-item
+                span.txt Week change
+                span.percent +266%
+              li.main-currency__change-item
+                span.txt Month change
+                span.percent +266%
+          .main-currency__item(style="background: url(img/currency/litecoin-bg.jpg);")
+            h4.main-currency__name Litecoin
+            .main-currency__img
+              img(src="img/currency/litecoin.png", alt="Litecoin")
+            .main-currency__price
+              span.main-currency__text Price:
+              span.main-currency__qnty $22 526.92
+            .main-currency__percent
+              span.main-currency__txt Percent change
+              input.main-currency__progress.grey(type="checkbox")
+            ul.main-currency__change
+              li.main-currency__change-item
+                span.txt Hour change
+                span.percent +266%
+              li.main-currency__change-item
+                span.txt Day change
+                span.percent +266%
+              li.main-currency__change-item
+                span.txt Week change
+                span.percent +266%
+              li.main-currency__change-item
+                span.txt Month change
+                span.percent +266%
+          .main-currency__item(style="background: url(img/currency/bitcoin-bg.jpg);")
+            h4.main-currency__name Bitcoin
+            .main-currency__img
+              img(src="img/currency/bitcoin.png", alt="Bitcoin")
+            .main-currency__price
+              span.main-currency__text Price:
+              span.main-currency__qnty $22 526.92
+            .main-currency__percent
+              span.main-currency__txt Percent change
+              input.main-currency__progress.grey(type="checkbox")
+            ul.main-currency__change
+              li.main-currency__change-item
+                span.txt Hour change
+                span.percent +26$
+              li.main-currency__change-item
+                span.txt Day change
+                span.percent.red -20$
+              li.main-currency__change-item
+                span.txt Week change
+                span.percent +26$
+              li.main-currency__change-item
+                span.txt Month change
+                span.percent +26$
+    
+    script(src="js/jquery-3.3.1.min.js")
+    script(src="js/jquery-ui.min.js")
+    script(src="js/main.js")
+
